@@ -207,7 +207,7 @@ namespace IntegrationSys
                 {
                     FlowItemExecutor executor = new FlowItemExecutor(flowItem);
                     executor.ExecuteFinish += ItemExecuteFinish;
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(executor.ThreadProc));
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(executor.ThreadProc));//将Item注入线程池，排队执行
                     flowItem.Status = FlowItem.STATUS_RUNNING;
                     UpdateRunning(flowItem);
                 }
@@ -444,6 +444,11 @@ namespace IntegrationSys
             }
         }
 
+
+        /// <summary>
+        /// 更新执行状态,主要更新控件状态
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void UpdateRunning(FlowItem flowItem)
         {
             if (flowItem.Status == FlowItem.STATUS_RUNNING && !flowItem.Item.Property.Hide)
@@ -514,7 +519,7 @@ namespace IntegrationSys
         /// <returns></returns>
         private bool CheckDepend(HashSet<int> dependSet)
         {
-            if (dependSet == null) return true;
+            if (dependSet == null) return true;//无依赖项目,流程初始化的第一个测试项目
             FlowControl flowControl = FlowControl.Instance;
             foreach (int id in dependSet)
             {
@@ -600,11 +605,16 @@ namespace IntegrationSys
             EquipmentCmd.Instance.ReportEvent += EquipmentEventHandler;
         }
 
+
+        /// <summary>
+        /// 下位机主动上报句柄
+        /// </summary>
+        /// <param name="eventId"></param>
         private void EquipmentEventHandler(CommonPortCmd.ActiveEnumData eventId)
         {
             Log.Debug("Equipment report event " + eventId);
 
-            if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_OK)
+            if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_OK)//接收到产品到位开始执行流程
             {
                 if (0 == NetUtil.GetStationIndex())
                 {
@@ -626,7 +636,7 @@ namespace IntegrationSys
                     LiteDataClient.Instance.SendInplaceFlag(NetUtil.GetStationIndex());
                 }
             }
-            else if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_NO)
+            else if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_NO)//接收到产品离开复位流程
             {
                 this.BeginInvoke(new MethodInvoker(delegate
                     {

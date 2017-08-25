@@ -66,12 +66,24 @@ namespace IntegrationSys.Flow
         const string CMD_IMAGE_PROCESS = "图像处理操作";
         const string CMD_IMAGE = "图像操作";
         
-
+        /// <summary>
+        /// 命令匹配委托
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private delegate void ExecuteMatchCmd(string action, string param, out string retValue);
 
+        /// <summary>
+        /// 流程执行完成事件
+        /// </summary>
         public event ExecuteFinishEventHandler ExecuteFinish;
 
+        /// <summary>
+        /// 建立命令映射字典
+        /// </summary>
         private Dictionary<string, ExecuteMatchCmd> cmdDict_;
+
         private FlowItem flowItem_;
 
         public FlowItemExecutor(FlowItem flowItem)
@@ -96,6 +108,9 @@ namespace IntegrationSys.Flow
             cmdDict_.Add(CMD_IMAGE_PROCESS, new ExecuteMatchCmd(ImageProcessCmd.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_IMAGE, new ExecuteMatchCmd(ImageCmd.Instance.ExecuteCmd));
         }
+
+
+
 
         public void ThreadProc(Object stateInfo)
         { 

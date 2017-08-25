@@ -11,6 +11,12 @@ namespace IntegrationSys.Net
         public const int PORT_FILE_TRANSFER_SERVER = 10106;
         public const int PORT_LITE_DATA_SERVER = 10108;
 
+
+
+        /// <summary>
+        /// 获取当前主机的IP地址
+        /// </summary>
+        /// <returns></returns>
         public static string LocalIp()
         {
             return Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault<IPAddress>(a => a.AddressFamily.ToString().Equals("InterNetwork")).ToString();
@@ -56,6 +62,13 @@ namespace IntegrationSys.Net
             return ip;
         }
 
+
+
+        /// <summary>
+        /// 根据IP地址
+        /// 获取站位信息
+        /// </summary>
+        /// <returns></returns>
         public static int GetStationIndex()
         {
             string localIp = LocalIp();
