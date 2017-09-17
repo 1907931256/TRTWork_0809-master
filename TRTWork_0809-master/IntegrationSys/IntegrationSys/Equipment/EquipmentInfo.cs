@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace IntegrationSys.Equipment
+﻿namespace IntegrationSys.Equipment
 {
     //记录设备信息
     class StationInfo
@@ -39,6 +34,9 @@ namespace IntegrationSys.Equipment
         }
     }
 
+    /// <summary>
+    /// 设备信息是 MMI设备一共6个站位
+    /// </summary>
     class EquipmentInfo
     {
         public const int STATION_NUM = 6;
@@ -53,6 +51,11 @@ namespace IntegrationSys.Equipment
             }
         }
 
+        /// <summary>
+        /// 获得站位信息
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public StationInfo GetStationInfo(int index)
         {
             return stationsInfo_[index]; 

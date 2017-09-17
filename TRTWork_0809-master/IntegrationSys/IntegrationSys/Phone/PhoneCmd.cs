@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
@@ -68,6 +65,12 @@ namespace IntegrationSys.Phone
             }
         }
 
+        /// <summary>
+        /// 手机命令 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         public void ExecuteCmd(string action, string param, out string retValue)
         {
             if (action == ACTION_APK_CONNECT)
@@ -128,12 +131,22 @@ namespace IntegrationSys.Phone
             retValue = result ? "Res=Pass" : "Res=Fail";
         }
 
+        /// <summary>
+        /// apk通讯断开
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecuteApkDisconnect(string param, out   string retValue)
         {
             Disconnect();
             retValue = "Res=Pass";
         }
 
+        /// <summary>
+        /// apk push
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecutePush(string param, out string retValue)
         {
             string ip = "127.0.0.1";
@@ -147,6 +160,11 @@ namespace IntegrationSys.Phone
             retValue = FileTransferCmd.TRANSFER_ERROR_NONE == transferCmd.Push(paths[0], paths[1]) ? "Res=Pass" : "Res=Fail";
         }
 
+        /// <summary>
+        /// apk pull
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecutePull(string param, out string retValue)
         {
             string ip = "127.0.0.1";

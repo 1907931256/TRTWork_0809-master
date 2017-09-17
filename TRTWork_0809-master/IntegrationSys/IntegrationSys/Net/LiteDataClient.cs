@@ -10,6 +10,9 @@ using IntegrationSys.LogUtil;
 
 namespace IntegrationSys.Net
 {
+    /// <summary>
+    /// 数据交互客户端
+    /// </summary>
     class LiteDataClient
     {
         private static LiteDataClient instance_;
@@ -30,6 +33,11 @@ namespace IntegrationSys.Net
             }
         }
 
+        /// <summary>
+        /// 产品到位处理事件
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public bool SendInplaceFlag(int index)
         {
             bool result = false;
@@ -54,6 +62,11 @@ namespace IntegrationSys.Net
             return result;
         }
 
+        /// <summary>
+        /// 流程运行完成事件
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public bool SendCompleteFlag(int index)
         {
             bool result = false;
@@ -78,6 +91,11 @@ namespace IntegrationSys.Net
             return result;
         }
 
+        /// <summary>
+        /// 产品离开
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public bool SendPickPlace(int index)
         {
             bool result = false;
@@ -102,6 +120,12 @@ namespace IntegrationSys.Net
             return result;
         }
 
+
+        /// <summary>
+        /// 获取手机的ＩＰ地址
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public string GetPhoneIP(int index)
         {
             string ip = string.Empty;
@@ -125,6 +149,14 @@ namespace IntegrationSys.Net
             return ip;
         }
 
+        /// <summary>
+        /// 设备命令互发
+        /// 基于网络
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="action"></param>
+        /// <param name="paramter"></param>
+        /// <returns></returns>
         public string SendEquipmentCmd(int index, string action, string paramter)
         {
             string result = string.Empty;

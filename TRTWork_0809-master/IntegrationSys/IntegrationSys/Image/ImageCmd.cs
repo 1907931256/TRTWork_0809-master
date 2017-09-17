@@ -9,6 +9,9 @@ using System.IO;
 
 namespace IntegrationSys.Image
 {
+    /// <summary>
+    /// 图像操作
+    /// </summary>
     class ImageCmd : IExecutable
     {
         const string ACTION_ROTATE = "图像旋转";

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using IntegrationSys.Equipment;
 using IntegrationSys.Net;
 using IntegrationSys.LogUtil;
@@ -17,9 +14,19 @@ namespace IntegrationSys
     {
         public const int STATION_SERVER = 5;
 
+        /// <summary>
+        /// 定义设备种类是MMI
+        /// </summary>
         const int APP_TYPE_MMI = 0;
+
+        /// <summary>
+        /// 定义设备种类是  Camera
+        /// </summary>
         const int APP_TYPE_CAMERA = 1;
 
+        /// <summary>
+        /// 定义测试信息  设备种类是 MMI
+        /// </summary>
         private static int appType_ = APP_TYPE_MMI;
 
         private static PhoneInfo phoneInfo_;
@@ -58,7 +65,10 @@ namespace IntegrationSys
             }
         }
 
-
+        /// <summary>
+        /// 检测取放条件
+        /// </summary>
+        /// <returns></returns>
         public static bool CheckPickPlaceCondition()
         {
             string work = string.Empty;
@@ -157,6 +167,9 @@ namespace IntegrationSys
             set;
         }
 
+        /// <summary>
+        /// 手机ＩＰ
+        /// </summary>
         public string IP
         {
             get;

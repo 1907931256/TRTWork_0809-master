@@ -110,7 +110,7 @@ namespace IntegrationSys.Flow
             cmdDict_.Add(CMD_EQUIPMENT6, new ExecuteMatchCmd(RemoteEquipmentCmd6.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_FILE, new ExecuteMatchCmd(FileCmd.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_RSTECH, new ExecuteMatchCmd(RStechCmd.Instance.ExecuteCmd));
-            //cmdDict_.Add(CMD_AUDIO, new ExecuteMatchCmd(AudioCmd.Instance.ExecuteCmd));
+            cmdDict_.Add(CMD_AUDIO, new ExecuteMatchCmd(AudioCmd.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_RESULT, new ExecuteMatchCmd(ResultCmd.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_IMAGE_PROCESS, new ExecuteMatchCmd(ImageProcessCmd.Instance.ExecuteCmd));
             cmdDict_.Add(CMD_IMAGE, new ExecuteMatchCmd(ImageCmd.Instance.ExecuteCmd));
@@ -231,6 +231,7 @@ namespace IntegrationSys.Flow
             Log.Debug("ExecuteCmd name = " + name + ", action = " + action + ", param = " + param + " start");
             if (cmdDict_.ContainsKey(name))
             {
+                
                 cmdDict_[name](action, param, out retValue);
             }
             else
@@ -240,6 +241,12 @@ namespace IntegrationSys.Flow
             Log.Debug("ExecuteCmd name = " + name + ", action = " + action + ", param = " + param + ", " + retValue);
         }
 
+        /// <summary>
+        /// 执行设备命令
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecuteEquipmentCmd(string action, string param, out string retValue)
         {
             EquipmentCmd cmd = EquipmentCmd.Instance;
@@ -314,6 +321,11 @@ namespace IntegrationSys.Flow
 
         }
 
+        /// <summary>
+        /// 更新判断方法
+        /// </summary>
+        /// <param name="compare"></param>
+        /// <param name="specValue"></param>
         private void UpdateJudgmentResult(string compare, SpecValue specValue)
         {
             if (compare.Equals("S=="))
@@ -427,7 +439,11 @@ namespace IntegrationSys.Flow
             }
         }
 
-        //获取methodList中需要循环执行的第一项和最后一项索引
+        /// <summary>
+        /// 获取methodList中需要循环执行的第一项和最后一项索引
+        /// </summary>
+        /// <param name="methodList"></param>
+        /// <returns></returns>
         private Tuple<int, int> GetLoopFirstLast(List<Method> methodList)
         {
             int first = -1;

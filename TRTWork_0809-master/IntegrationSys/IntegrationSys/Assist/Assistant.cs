@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using IntegrationSys.CommandLine;
 using IntegrationSys.Flow;
 using System.Xml;
 
 namespace IntegrationSys.Assist
 {
+    /// <summary>
+    /// 辅助操作
+    /// </summary>
     class Assistant : IExecutable
     {
         const string ACTION_APK_INSTALL = "APK安装";
@@ -32,6 +32,12 @@ namespace IntegrationSys.Assist
             }
         }
 
+        /// <summary>
+        /// 封装辅助命令
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         public void ExecuteCmd(string action, string param, out string retValue)
         {
             if (action == ACTION_APK_INSTALL)
@@ -48,6 +54,11 @@ namespace IntegrationSys.Assist
             }
         }
 
+        /// <summary>
+        /// apk安装
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecuteInstallCmd(string param, out string retValue)
         {
             bool ret = AdbCommand.InstallApkAndStart();
@@ -55,6 +66,11 @@ namespace IntegrationSys.Assist
             retValue = ret ? "Res=Pass" : "Res=Fail";
         }
 
+        /// <summary>
+        /// 失败项目统计
+        /// 生成 result.xml文件
+        /// </summary>
+        /// <param name="retValue"></param>
         private void ExecuteFailItemsStatistic(out string retValue)
         {
             FlowControl flowControl = FlowControl.Instance;

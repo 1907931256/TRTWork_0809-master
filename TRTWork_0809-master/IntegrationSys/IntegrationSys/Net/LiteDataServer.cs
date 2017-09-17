@@ -13,7 +13,9 @@ using IntegrationSys.Equipment;
 
 namespace IntegrationSys.Net
 {
-    //用于处理上位机之间简单的数据交互
+    /// <summary>
+    /// 简单的数据交互 服务器端
+    /// </summary>
     class LiteDataServer
     {
         public delegate void InplaceEventHandler(int index);
@@ -21,10 +23,16 @@ namespace IntegrationSys.Net
         public delegate void PickPlaceEventHandler();
 
         /// <summary>
-        /// 
+        /// 产品到位  事件
         /// </summary>
         public event InplaceEventHandler InplaceEvent;
+        /// <summary>
+        /// 测试是完成事件
+        /// </summary>
         public event CompleteEventHandler CompleteEvent;
+        /// <summary>
+        /// 产品离开  事件
+        /// </summary>
         public event PickPlaceEventHandler PickPlaceEvent;
 
         private static LiteDataServer instance_;
@@ -49,6 +57,10 @@ namespace IntegrationSys.Net
         private TcpListener server;
         private bool exit = false;
 
+
+       /// <summary>
+       /// 服务器开始工作
+       /// </summary>
         public void Start()
         {
             exit = false;
@@ -71,6 +83,12 @@ namespace IntegrationSys.Net
             server.Stop();
         }
 
+
+
+        /// <summary>
+        /// 服务器端线程池，接收客户端的信息并处理
+        /// </summary>
+        /// <param name="state"></param>
         private void ThreadProc(Object state)
         {
             TcpClient client = (TcpClient)state;
@@ -156,6 +174,11 @@ namespace IntegrationSys.Net
 
         }
 
+        /// <summary>
+        /// 文本文件获取IP地址
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private static string GetIp(int index)
         {
             string ip = "";
