@@ -97,7 +97,7 @@ namespace CommonPortCmd
             XMLConfig config = new XMLConfig();
             serialWrapper = new SerialPortWrapper();
             delyEvent = new AutoResetEvent(true);
-            event_1 = new AutoResetEvent(false);
+            event_1 = new AutoResetEvent(true);
 
             woShouEvent = new AutoResetEvent(false);
             sendNetEqumentCmd = new SendEqumentCmd();
@@ -316,11 +316,17 @@ namespace CommonPortCmd
                 {
                     Log.Debug("Cmd is delay cmd -->" + strCmd + param);
                     delyEvent.WaitOne();//每次只能发送一条电机运动指令
-
+                    
                     string rec_txt;
 
                     SendHex(sendHex, out rec_txt);//发送命令
+
+                    event_1.Reset();
                     bool b = event_1.WaitOne();//等待延迟数据返回
+
+                    SendCommand("6站报警清除", out rec_txt);
+
+                    Log.Debug("SendCommand(72 05 16 0A 04 00 81,out rec_txt);");
 
                     if (b == true)
                     {

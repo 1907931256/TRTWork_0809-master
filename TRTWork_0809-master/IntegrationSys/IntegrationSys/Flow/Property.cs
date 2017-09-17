@@ -81,6 +81,10 @@ namespace IntegrationSys.Flow
             set;
         }
 
+        /// <summary>
+        /// 兄弟项目
+        /// 主项目关掉，其余兄弟项目也跟着关掉
+        /// </summary>
         public string Brother
         {
             get;

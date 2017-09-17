@@ -18,11 +18,18 @@ using IntegrationSys.Image;
 
 namespace IntegrationSys.Flow
 {
+    /// <summary>
+    /// 可执行命令接口
+    /// </summary>
     interface IExecutable
     {
         void ExecuteCmd(string action, string param, out string retValue);
     }
 
+
+    /// <summary>
+    /// 命令执行完成事件
+    /// </summary>
     class ExecuteFinishEventArgs : EventArgs
     {
         private FlowItem flowItem_;
@@ -239,6 +246,13 @@ namespace IntegrationSys.Flow
             cmd.SendCommand(action, param, out retValue);
         }
 
+
+        /// <summary>
+        /// 延时命令实际执行者
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="param"></param>
+        /// <param name="retValue"></param>
         private void ExecuteDelayCmd(string action, string param, out string retValue)
         {
             int timeout = Convert.ToInt32(param);

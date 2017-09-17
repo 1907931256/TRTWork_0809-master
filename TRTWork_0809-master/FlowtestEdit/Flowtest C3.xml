@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+	<Item id="1">
+		<Method name="设备操作" action="3站前白远离检测" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="1">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="前白远离">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="">
+		</Property>
+	</Item>
+	<Item id="2">
+		<Method name="设备操作" action="3站产品到位检测" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="2">
+		</Property><Property spec="NO">
+		</Property><Property specdescribe="产品取走">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="1">
+		</Property>
+	</Item>
+	<Item id="3">
+		<Method name="手机操作" action="APK通信连接" parameters="Wifi" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="3">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="WIFI通讯">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property updatespec="">
+		</Property><Property switch="1">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="2">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="2">
+		</Property>
+	</Item>
+	<Item id="4">
+		<Method name="手机操作" action="GetProp" parameters="gsm.serial" compare="S[]" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="SN">
+		</Property><Property spec="ZW">
+		</Property><Property specdescribe="号码">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="">
+		</Property><Property depend="3">
+		</Property>
+	</Item>
+	<Item id="5">
+		<Method name="设备操作" action="3站近焦光源调节" parameters="250" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="5">
+		</Property><Property spec="">
+		</Property><Property specdescribe="近焦光源">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="近焦(后)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="4">
+		</Property>
+	</Item>
+	<Item id="6">
+		<Method name="设备操作" action="3站产品到位检测" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="6">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="产品放入">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="1">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="30">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="5">
+		</Property>
+	</Item>
+	<Item id="7">
+		<Method name="设备操作" action="3站产品到位检测" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="7">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="产品放入">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="!6">
+		</Property><Property depend="6">
+		</Property>
+	</Item>
+	<Item id="8">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/BMN.jpg 100" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="近焦(后)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="拍照存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="7">
+		</Property>
+	</Item>
+	<Item id="9">
+		<Method name="设备操作" action="3站近焦光源调节" parameters="0" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="9">
+		</Property><Property spec="">
+		</Property><Property specdescribe="近焦光源">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="近焦(后)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="8">
+		</Property>
+	</Item>
+	<Item id="10">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/BMN.jpg E:\IMAGES\BMN.jpg" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="10">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="近焦上传">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="近焦(后)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="8">
+		</Property>
+	</Item>
+	<Item id="11">
+		<Method name="文件操作" action="文件拷贝" parameters="E:\IMAGES\BMN.jpg C:\TRT_Camera_Tester_Picture\\LENS0_SFR\手机SN号BMN_时间.jpg" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="11">
+		</Property><Property spec="">
+		</Property><Property specdescribe="近焦传输">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="近焦(后)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="10">
+		</Property>
+	</Item>
+	<Item id="12">
+		<Method name="手机操作" action="GetCamInfo" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="12">
+		</Property><Property spec="Front">
+		</Property><Property specdescribe="有无">
+		</Property><Property enspecdescribe="Cam0">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="0">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="10">
+		</Property>
+	</Item>
+	<Item id="13">
+		<Method name="手机操作" action="GetCamInfo" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="相机(前)">
+		</Property><Property spec="Front">
+		</Property><Property specdescribe="有无">
+		</Property><Property enspecdescribe="Cam1">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="!12">
+		</Property><Property depend="12">
+		</Property>
+	</Item>
+	<Item id="14">
+		<Method name="手机操作" action="CameraStart" parameters="front" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="打开(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="预览">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="13">
+		</Property><Property depend="13">
+		</Property>
+	</Item>
+	<Item id="15">
+		<Method name="1站设备操作" action="1站电机1原点检测" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Property name="15">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="取放原点">
+		</Property><Property enspecdescribe="state">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="30">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="11 14">
+		</Property>
+	</Item>
+	<Item id="16">
+		<Method name="设备操作" action="3站前色光源调节" parameters="240 240 240" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="16">
+		</Property><Property spec="">
+		</Property><Property specdescribe="光源提供">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="15">
+		</Property>
+	</Item>
+	<Item id="17"><!--解析环境归位-->
+		<Method name="设备操作" action="3站前白靠近" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="1000" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="17">
+		</Property><Property spec="">
+		</Property><Property specdescribe="白卡靠近">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="15">
+		</Property>
+	</Item>
+	<Item id="18"><!--像素最高-->
+		<Method name="手机操作" action="CameraStart" parameters="setPicSize 1280*960*1*1280*960" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="18">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="前摄像素">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="15">
+		</Property>
+	</Item>
+	<Item id="19">
+		<Method name="手机操作" action="CameraStart" parameters="setCamPara iso=100;effect=mono;" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="19">
+		</Property><Property spec="">
+		</Property><Property specdescribe="前白参数">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="18">
+		</Property>
+	</Item>
+	<Item id="20">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/FMW.jpg 0" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="白卡(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="拍照存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="14">
+		</Property><Property depend="16 17 19">
+		</Property>
+	</Item>
+	<Item id="21">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/FMW.jpg E:\IMAGES\FMW.jpg" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="21">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="前白上传">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="20">
+		</Property>
+	</Item>
+	<Item id="22">
+		<Method name="文件操作" action="文件传输" parameters="E:\IMAGES\FMW.jpg machine5@C:\TRT_Camera_Tester_Picture\LENS1WHITE\手机SN号FMW_时间.jpg" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="22">
+		</Property><Property spec="">
+		</Property><Property specdescribe="前白传输">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="21">
+		</Property>
+	</Item>
+	<Item id="23">
+		<Method name="设备操作" action="3站前白远离" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站前白远离检测" parameters="" compare="" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="23">
+		</Property><Property spec="">
+		</Property><Property specdescribe="前白归位">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="15">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="20">
+		</Property>
+	</Item>
+	<Item id="24">
+		<Method name="设备操作" action="3站前色光源调节" parameters="180 180 180" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="24">
+		</Property><Property spec="">
+		</Property><Property specdescribe="光源提供">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="解析(前) 色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="20">
+		</Property>
+	</Item>
+	<Item id="25">
+		<Method name="手机操作" action="CameraStart" parameters="setCamPara iso=100;effect=none;" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="25">
+		</Property><Property spec="">
+		</Property><Property specdescribe="前色参数">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="21">
+		</Property>
+	</Item>
+	<Item id="26">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/FMT.jpg 0" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="解析(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="拍照存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="14">
+		</Property><Property depend="23 24 25">
+		</Property>
+	</Item>
+	<Item id="27">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0//FMT.jpg E:\IMAGES\/FMT.jpg" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+ 		</Method><Property name="27">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="解析上传">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="解析(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="26">
+		</Property>
+	</Item>
+	<Item id="28">
+		<Method name="文件操作" action="文件拷贝" parameters="E:\IMAGES\/FMT.jpg C:\TRT_Camera_Tester_Picture\LENS1_TVLINE\手机SN号FMT_时间.jpg" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="28">
+		</Property><Property spec="">
+		</Property><Property specdescribe="解析传输">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="解析(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="22 27">
+		</Property>
+	
+	</Item>
+	<Item id="29">
+		<Method name="设备操作" action="3站解析远离" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站解析远离检测" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="29">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="解析远离">
+		</Property><Property enspecdescribe="state">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="20">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="26">
+		</Property>
+	</Item>
+	<Item id="30">
+		<Method name="手机操作" action="CameraStart" parameters="takephoto /storage/emulated/0/FMC.jpg 0" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="色卡(前)">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="拍照存储">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="">
+		</Property><Property condition="14">
+		</Property><Property depend="27 29">
+		</Property>
+	</Item>
+	<Item id="31">
+		<Method name="手机操作" action="pull" parameters="/storage/emulated/0/FMC.jpg E:\IMAGES\FMC.jpg" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="31">
+		</Property><Property spec="Pass">
+		</Property><Property specdescribe="前色上传">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="30">
+		</Property>
+	</Item>
+	<Item id="32">
+		<Method name="设备操作" action="3站出仓原点检测" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Property name="32">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="取放原点">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="1">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="50">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="28 31">
+		</Property>
+	</Item>
+	<Item id="33">
+		<Method name="设备操作" action="3站取放3吸取检测" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="500" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="33">
+		</Property><Property spec="NO">
+		</Property><Property specdescribe="取放吸取">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="1">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="30">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="32">
+		</Property>
+	</Item>
+	<Item id="34">
+		<Method name="文件操作" action="文件传输" parameters="E:\IMAGES\FMC.jpg machine6@C:\TRT_Camera_Tester_Picture\LENS1_COLOR\手机SN号FMC_时间.jpg" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="34">
+		</Property><Property spec="">
+		</Property><Property specdescribe="前色传输">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="14">
+		</Property><Property depend="33">
+		</Property>
+	</Item>
+	<Item id="35">
+		<Method name="手机操作" action="camera stop" parameters="" compare="S==" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="150" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="35">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="前摄关闭">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="33">
+		</Property>
+	</Item>
+	<Item id="36">
+        <Method name="手机操作" action="APK通信断开" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="36">
+		</Property><Property spec="PASS">
+		</Property><Property specdescribe="APK断开">
+		</Property><Property enspecdescribe="Res">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="35">
+		</Property>
+	</Item>
+	<Item id="37">
+		<Method name="设备操作" action="3站前白远离" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="37">
+		</Property><Property spec="">
+		</Property><Property specdescribe="光源关闭">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="33">
+		</Property>
+	</Item>
+	<Item id="38"><!--色卡环境归位-->
+		<Method name="设备操作" action="3站解析靠近" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="250" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="38">
+		</Property><Property spec="">
+		</Property><Property specdescribe="解析归位">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="色卡(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="37">
+		</Property>
+	</Item>
+	<Item id="39">
+		<Method name="设备操作" action="3站前色光源调节" parameters="0 0 0" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="延时" action="延时" parameters="50" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="39">
+		</Property><Property spec="">
+		</Property><Property specdescribe="光源关闭">
+		</Property><Property enspecdescribe="">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="白卡(前) 色卡(前) 解析(前)">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="38">
+		</Property>
+	</Item>
+	<Item id="40">
+		<Method name="设备操作" action="3站前白远离" parameters="" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站前白远离检测" parameters="" compare="" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Property name="40">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="前白远离">
+		</Property><Property enspecdescribe="staus">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="15">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="34 36 39">
+		</Property>	
+	</Item>
+	<Item id="41">
+		<Method name="设备操作" action="3站状态正常" parameters="" compare="S==" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="1">
+		</Method><Property name="41">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="设备状态">
+		</Property><Property enspecdescribe="status">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="">
+		</Property><Property disable="">
+		</Property><Property specenable="1">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="10">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="40">
+		</Property>
+	</Item>
+	<Item id="42">
+		<Method name="延时" action="延时" parameters="1000" compare="" disable="" bedepend="" depend="">
+		</Method><Method name="设备操作" action="3站取放原点检测" parameters="" compare="" disable="" bedepend="1" depend="">
+		</Method><Method name="延时" action="延时" parameters="200" compare="" disable="" bedepend="" depend="1">
+		</Method><Method name="延时" action="延时" parameters="100" compare="" disable="" bedepend="" depend="">
+		</Method><Property name="42">
+		</Property><Property spec="OK">
+		</Property><Property specdescribe="取放原点">
+		</Property><Property enspecdescribe="staus">
+		</Property><Property errcode="">
+		</Property><Property specprefix="">
+		</Property><Property specsuffix="">
+		</Property><Property switch="">
+		</Property><Property alarm="2">
+		</Property><Property disable="">
+		</Property><Property specenable="">
+		</Property><Property brother="">
+		</Property><Property timeout="">
+		</Property><Property editable="">
+		</Property><Property loop="30">
+		</Property><Property hide="0">
+		</Property><Property condition="">
+		</Property><Property depend="41">
+		</Property>
+	</Item>
+	</Main>

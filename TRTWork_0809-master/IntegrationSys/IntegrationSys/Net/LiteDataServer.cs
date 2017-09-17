@@ -20,6 +20,9 @@ namespace IntegrationSys.Net
         public delegate void CompleteEventHandler(int index);
         public delegate void PickPlaceEventHandler();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public event InplaceEventHandler InplaceEvent;
         public event CompleteEventHandler CompleteEvent;
         public event PickPlaceEventHandler PickPlaceEvent;

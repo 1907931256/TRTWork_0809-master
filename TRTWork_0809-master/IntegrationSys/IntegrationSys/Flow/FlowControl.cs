@@ -57,6 +57,10 @@ namespace IntegrationSys.Flow
         /// </summary>
         private List<FlowItem> flowItemList_;
 
+
+        /// <summary>
+        /// 流程控制初始化流程
+        /// </summary>
         public static FlowControl Instance
         {
             get 
@@ -70,6 +74,9 @@ namespace IntegrationSys.Flow
             }
         }
 
+        /// <summary>
+        /// 流程状态
+        /// </summary>
         public int FlowStatus
         {
             get;
@@ -82,6 +89,9 @@ namespace IntegrationSys.Flow
             set;
         }
 
+        /// <summary>
+        /// 测试结果
+        /// </summary>
         public int FlowResult
         {
             get;
@@ -101,11 +111,18 @@ namespace IntegrationSys.Flow
             LoadFlowFile("Flowtest.xml");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
         private FlowControl(string filename)
         {
             LoadFlowFile(filename);
         }
 
+        /// <summary>
+        /// Item集合
+        /// </summary>
         public List<FlowItem> FlowItemList
         {
             get 
@@ -343,7 +360,11 @@ namespace IntegrationSys.Flow
             flowItemList_.Add(flowItem);
         }
 
-
+       /// <summary>
+       /// 添加依赖项目和被依赖项目
+       /// </summary>
+       /// <param name="flowItem"></param>
+       /// <param name="dependId"></param>
         private void AddDependAndBedepend(FlowItem flowItem, int dependId)
         {
             FlowItem dependItem = GetFlowItem(dependId);
@@ -374,6 +395,10 @@ namespace IntegrationSys.Flow
             }
         }
 
+        /// <summary>
+        /// 跟新依赖项目和被依赖项目
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void UpdateDependAndBedepend(FlowItem flowItem)
         {
             if (!string.IsNullOrEmpty(flowItem.Item.Property.Depend))

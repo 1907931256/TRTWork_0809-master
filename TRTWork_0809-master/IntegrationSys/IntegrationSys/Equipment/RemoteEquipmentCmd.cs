@@ -7,6 +7,9 @@ using IntegrationSys.Net;
 
 namespace IntegrationSys.Equipment
 {
+    /// <summary>
+    /// 远程设备指令
+    /// </summary>
     class RemoteEquipmentCmd : IExecutable
     {
         private int station_;

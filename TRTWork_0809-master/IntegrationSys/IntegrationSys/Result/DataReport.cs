@@ -14,13 +14,15 @@ using IntegrationSys.Flow;
 
 namespace IntegrationSys.Result
 {
+    /// <summary>
+    /// 生成Excel数据报表
+    /// </summary>
     public static class DataReport
     {
         const string SHEET_NAME = "Data";
 
         /// <summary>
         /// 将测试结果保存到excel文件中
-        /// 
         /// </summary>
         public static void Save()
         {

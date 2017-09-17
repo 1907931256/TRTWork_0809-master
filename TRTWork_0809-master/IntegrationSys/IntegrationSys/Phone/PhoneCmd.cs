@@ -115,7 +115,7 @@ namespace IntegrationSys.Phone
             {
                 //result = Connect(AppInfo.PhoneInfo.IP, 3000);//正常用这个
                 //result = Connect("192.168.0.53", 3000);//公司测试
-                result = Connect("192.168.1.111", 3000);//家里测试
+                result = Connect("192.168.0.41", 3000);//家里测试
 
                 AppInfo.PhoneInfo.ConnectType = 1;
             }

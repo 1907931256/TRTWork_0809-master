@@ -20,27 +20,51 @@ namespace CommonPortCmd.Net
             string result = "0.0.0.0";
             switch (index)
             {
+                //case 0:
+                //    result = "192.168.0.19";
+                //    break;
+                //case 1:
+                //    result = "192.168.0.101";
+                //    break;
+                //case 2:
+                //    result = "192.168.0.102";
+                //    break;
+                //case 3:
+                //    result = "192.168.0.103";
+                //    break;
+                //case 4:
+                //    result = "192.168.0.104";
+                //    break;
+                //case 5:
+                //    result = "192.168.0.105";
+                //    break;
+                //case 6:
+                //    result = "192.168.0.106";
+                //    break;
+
+
                 case 0:
-                    result = "192.168.0.19";
+                    result = "10.1.1.11";
                     break;
                 case 1:
-                    result = "192.168.0.101";
+                    result = "10.1.1.11";
                     break;
                 case 2:
-                    result = "192.168.0.102";
+                    result = "10.1.1.12";
                     break;
                 case 3:
-                    result = "192.168.0.103";
+                    result = "10.1.1.13";
                     break;
                 case 4:
-                    result = "192.168.0.104";
+                    result = "10.1.1.14";
                     break;
                 case 5:
-                    result = "192.168.0.105";
+                    result = "10.1.1.15";
                     break;
                 case 6:
-                    result = "192.168.0.106";
+                    result = "10.1.1.16";
                     break;
+
             }
             return result;
         }

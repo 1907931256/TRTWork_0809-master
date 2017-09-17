@@ -7,6 +7,9 @@ using IntegrationSys.Flow;
 
 namespace IntegrationSys.LogUtil
 {
+    /// <summary>
+    /// 测试时间记录日志
+    /// </summary>
     static class TimeLog
     {
         const string FILE_NAME = @"time_statistics.csv";

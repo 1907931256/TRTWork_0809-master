@@ -272,6 +272,10 @@ namespace IntegrationSys.Flow
             return true;
         }
 
+        /// <summary>
+        /// 测试是否结束
+        /// </summary>
+        /// <returns></returns>
         public bool IsFinished()
         {
             return Status == STATUS_FINISH;

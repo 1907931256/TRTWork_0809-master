@@ -29,8 +29,16 @@ namespace IntegrationSys
         const int COLUMN_ITEM_DURATION = 7;
         const int COLUMN_ITEM_MAX = 8;
 
-        private int totalTime_ = 0;
 
+        /// <summary>
+        /// 测试时间计时
+        /// </summary>
+        private int totalTime_ = 0;
+        
+        /// <summary>
+        /// 执行一个Item 完成委托
+        /// </summary>
+        /// <param name="flowItem"></param>
         private delegate void ItemExecuteComplete(FlowItem flowItem);
 
         public Form1()
@@ -158,6 +166,10 @@ namespace IntegrationSys
             }
         }
 
+
+        /// <summary>
+        /// 重装流程
+        /// </summary>
         private void ReloadFlowTest()
         {
             if (FlowControl.Instance.FlowStatus == FlowControl.FLOW_STATUS_COMPLETE)
@@ -199,6 +211,10 @@ namespace IntegrationSys
             }
         }
 
+        /// <summary>
+        /// 开始测试一个Item项目
+        /// </summary>
+        /// <param name="flowItem"></param>
         private void StartFlowItem(FlowItem flowItem)
         {
             if (flowItem != null && !flowItem.Item.Property.Disable)
@@ -229,6 +245,11 @@ namespace IntegrationSys
             }
         }
 
+
+
+        /// <summary>
+        /// 停止测试流程
+        /// </summary>
         private void StopFlowTest()
         {
             FlowControl flowControl = FlowControl.Instance;
@@ -372,6 +393,11 @@ namespace IntegrationSys
             DataReport.Save();
         }
 
+
+        /// <summary>
+        /// 显示SN
+        /// </summary>
+        /// <param name="sn"></param>
         private void ShowSN(string sn)
         {
             labelSN.Text = sn;
@@ -662,12 +688,19 @@ namespace IntegrationSys
             AppInfo.TryPickPlace();
         }
 
+        /// <summary>
+        /// 收到下位机的到位信息
+        /// </summary>
+        /// <param name="index"></param>
         private void InplaceHandler(int index)
         {
             Log.Debug("InplaceHandler " + index);
             AppInfo.EquipmentInfo.GetStationInfo(index).Work = true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void PickPlaceHandler()
         {
             Log.Debug("PickPlaceHandler");
@@ -699,7 +732,8 @@ namespace IntegrationSys
         [Conditional("NDEBUG")]
         private void GetPhoneIp()
         {
-            //获取手机IP地址
+            //电脑IP地址获取当前站位信息，1站获取的信息是小于0 的
+
             if (NetUtil.GetStationIndex() > 0)
             {
                 AppInfo.PhoneInfo.IP = LiteDataClient.Instance.GetPhoneIP(NetUtil.GetStationIndex());
@@ -716,10 +750,15 @@ namespace IntegrationSys
             timer.Start();
         }
 
+        /// <summary>
+        /// 停止计时器
+        /// </summary>
         private void StopFlowTimer()
         {
             timer.Stop();
         }
+
+
 
         private void FlowTimerTickHandler(Object sender, EventArgs e)
         {
@@ -728,6 +767,9 @@ namespace IntegrationSys
             SetStripProgressBarWidth();
         }
 
+        /// <summary>
+        /// 初始化 测试显示栏  进度条，测试时间，测试数目
+        /// </summary>
         private void InitStatusStrip()
         {
             SetStripProgressBarWidth();
@@ -735,11 +777,20 @@ namespace IntegrationSys
             InitStatusProgressBar();
         }
 
+
+       /// <summary>
+       /// 初始化计时器显示栏
+       /// </summary>
         private void InitStatusLabelTime()
         {
             this.toolStripStatusLabelTime.Text = "测试时间 : 0 s";
         }
 
+
+
+        /// <summary>
+        /// 初始化进度条
+        /// </summary>
         private void InitStatusProgressBar()
         {
             toolStripProgressBar.Minimum = 0;
@@ -749,11 +800,18 @@ namespace IntegrationSys
             toolStripProgressBar.Step = 1;
         }
 
+        /// <summary>
+        /// 设置进度条的长度
+        /// </summary>
         private void SetStripProgressBarWidth()
         {
+            //进度条长度=
             this.toolStripProgressBar.Width = this.statusStrip.Width - this.toolStripStatusLabelTime.Width - this.toolStripStatusLabelStatistic.Width - 15;
         }
 
+        /// <summary>
+        ///  新 统计 计算 信息
+        /// </summary>
         private void UpdateStatisticInfo()
         {
             int total = Statistic.Instance.StatisticInfo.TotalNum;

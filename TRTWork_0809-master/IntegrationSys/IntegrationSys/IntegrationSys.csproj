@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommonPortCmd">
-      <HintPath>Equipment\CommonPortCmd.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
@@ -183,7 +180,12 @@
     <Content Include="TestScript\Flowtest.xml" />
     <Content Include="TestScript\WifiConnectTest.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommPortDll0_MMI\ClassLibraryDll\CommonPortCmd_MMI_CAM.csproj">
+      <Project>{2e2b9417-06ed-4e85-b106-5bf2ee18d840}</Project>
+      <Name>CommonPortCmd_MMI_CAM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
