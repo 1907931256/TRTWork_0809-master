@@ -182,6 +182,11 @@ namespace IntegrationSys.Net
             return result;
         }
 
+
+        /// <summary>
+        /// 广播可以取放
+        /// </summary>
+        /// <returns></returns>
         public bool BroadcastPickPlace()
         {
             Log.Debug("SendPickPlace " + 0);

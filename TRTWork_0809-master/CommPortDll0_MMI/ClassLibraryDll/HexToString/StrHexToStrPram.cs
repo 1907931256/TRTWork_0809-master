@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CommonPortCmd
 {
+    /// <summary>
+    /// 下位机返回数据解析
+    /// </summary>
     public class StrHexToStrPram : EventArgs
     {
    
@@ -46,6 +49,13 @@ namespace CommonPortCmd
             if (strModule == "01" && strStr == "FF")//检测
             {
                 strRec ="status=NO";
+            }
+            #endregion
+
+            #region  1站取放电机可以运动
+           else if (strAddress == "11" && strModule == "04" && strPort == "0C" && strStr == "FF")
+            {
+                strRec = "status=NO";
             }
             #endregion
 

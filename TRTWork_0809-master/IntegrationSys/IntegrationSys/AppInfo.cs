@@ -144,7 +144,11 @@ namespace IntegrationSys
                     LiteDataClient.Instance.BroadcastPickPlace();
 
                     Log.Debug("PickPlace " + "1站取放 " + bin);
-                    EquipmentCmd.Instance.SendCommand("1站取放", param, out resp);
+                    if (EquipmentCmd.Instance.SendCommand("1站取放", param, out resp))
+                    {
+                        LiteDataClient.Instance.BroadcastPickPlace();
+                    }
+                    
                 });
 
                 for (int i = 0; i < EquipmentInfo.STATION_NUM; i++)

@@ -305,6 +305,7 @@ namespace CommonPortCmd
         public bool SendCommand(string strCmd, string param, out string recStr)
         {
             Log.Debug("Res cmd  SendCommand=" + strCmd);
+            recStr = "status=OK";
 
             string strHex = string.Empty;
             INICmds_.GetEqumentCommand(strCmd, out strHex);
@@ -321,23 +322,41 @@ namespace CommonPortCmd
 
                     SendHex(sendHex, out rec_txt);//发送命令
 
-                    event_1.Reset();
-                    bool b = event_1.WaitOne();//等待延迟数据返回
+                    Log.Debug("rec_txt="+ rec_txt);
 
-                    SendCommand("6站报警清除", out rec_txt);
-
-                    Log.Debug("SendCommand(72 05 16 0A 04 00 81,out rec_txt);");
-
-                    if (b == true)
+                    if (strCmd == "1站取放")
                     {
-                        recStr = "status=OK";
+                        Log.Debug("1站取放 rec_txt = "+ rec_txt);
+                        if (rec_txt.IndexOf("OK")!=-1)
+                        {
+                            event_1.Reset();
+                            event_1.WaitOne();//等待延迟数据返回
+
+
+                            //recStr = "status=OK";
+                            Log.Debug("1站取放 return true");
+                            return true;
+                        }
+                        else
+                        {
+                            recStr = "status=NO";
+                            Log.Debug("1站取放 return false");
+                            return false;
+                        }
                     }
                     else
                     {
-                        recStr = "status=NO";
-                    }
+                        event_1.Reset();
+                        event_1.WaitOne();//等待延迟数据返回
 
-                    return true;
+                        SendCommand("6站报警清除", out rec_txt);
+
+                        Log.Debug("SendCommand(72 05 16 0A 04 00 81,out rec_txt);");
+                        return true;
+                    }
+                   
+
+                  
                 }
                 else
                 {
@@ -363,8 +382,10 @@ namespace CommonPortCmd
                 {
                     recStr = "NOT";
                 }
+                return true;
             }
-            return true;
+
+
         }
 
         #region    /**********************************  龙门结构运动控制   *****************************************/
@@ -545,31 +566,31 @@ namespace CommonPortCmd
         {
             string strHex = string.Empty;
 
-            if (strCmd == "1站取放")
-            {
-                //delyEvent.WaitOne();//等待延迟数据返回
+            //if (strCmd == "1站取放")
+            //{
+            //    //delyEvent.WaitOne();//等待延迟数据返回
 
-                //Room_MotorCheckBeforeDo();
-                //Room_LeftDo(param);
-                //Room_RightDo(param);
-                //Room_MidDo(param);
-                Log.Debug("1站取放 start");
+            //    //Room_MotorCheckBeforeDo();
+            //    //Room_LeftDo(param);
+            //    //Room_RightDo(param);
+            //    //Room_MidDo(param);
+            //    Log.Debug("1站取放 start");
 
-                if (param != "0")
-                {
-                    strHex = "72 05 11 04 0C " + ShujuChuli.StrToHex(param) + " 81";
-                    SendHex(strHex, out recStr);//发送命令
+            //    if (param != "0")
+            //    {
+            //        strHex = "72 05 11 04 0C " + ShujuChuli.StrToHex(param) + " 81";
+            //        SendHex(strHex, out recStr);//发送命令
 
-                    recStr = "status=OK";
-                }
-                else
-                {
-                    recStr = "status=error";
-                }
-                Log.Debug("1站取放 stop");
-                return true;
-            }
-            else if (strCmd == "警告")
+            //        recStr = "status=OK";
+            //    }
+            //    else
+            //    {
+            //        recStr = "status=error";
+            //    }
+            //    Log.Debug("1站取放 stop");
+            //    return true;
+            //}
+             if (strCmd == "警告")
             {
                 if (station != "11")
                 {
