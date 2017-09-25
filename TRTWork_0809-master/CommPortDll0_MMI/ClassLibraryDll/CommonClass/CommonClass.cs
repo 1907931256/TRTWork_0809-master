@@ -340,6 +340,7 @@ namespace CommonPortCmd
                         else
                         {
                             recStr = "status=NO";
+                            delyEvent.Set();
                             Log.Debug("1站取放 return false");
                             return false;
                         }
