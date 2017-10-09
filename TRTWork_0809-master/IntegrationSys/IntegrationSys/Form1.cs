@@ -636,11 +636,11 @@ namespace IntegrationSys
         /// 下位机主动上报句柄
         /// </summary>
         /// <param name="eventId"></param>
-        private void EquipmentEventHandler(CommonPortCmd.ActiveEnumData eventId)
+        private void EquipmentEventHandler(RecvByteToString.ActiveEnumData eventId)
         {
             Log.Debug("Equipment report event " + eventId);
 
-            if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_OK)//接收到产品到位开始执行流程
+            if (eventId == RecvByteToString.ActiveEnumData.ProductInPlace_OK)//接收到产品到位开始执行流程
             {
                 if (0 == NetUtil.GetStationIndex())
                 {
@@ -662,7 +662,7 @@ namespace IntegrationSys
                     LiteDataClient.Instance.SendInplaceFlag(NetUtil.GetStationIndex());
                 }
             }
-            else if (eventId == CommonPortCmd.ActiveEnumData.ProductInPlace_NO)//接收到产品离开复位流程
+            else if (eventId == RecvByteToString.ActiveEnumData.ProductInPlace_NO)//接收到产品离开复位流程
             {
                 this.BeginInvoke(new MethodInvoker(delegate
                     {
@@ -699,7 +699,7 @@ namespace IntegrationSys
         }
 
         /// <summary>
-        /// 
+        /// 待测产品拿走
         /// </summary>
         private void PickPlaceHandler()
         {

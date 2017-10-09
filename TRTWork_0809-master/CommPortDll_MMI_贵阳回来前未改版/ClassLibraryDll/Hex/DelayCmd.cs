@@ -33,9 +33,6 @@ namespace CommonPortCmd
                 case "1站电机原点":
                     b = true;
                     break;
-                case "1站取放":
-                    b = true;
-                    break;
 
             }
             return b;

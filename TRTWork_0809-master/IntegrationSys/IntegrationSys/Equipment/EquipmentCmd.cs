@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using CommonPortCmd;
 using System.Threading;
+using RecvByteToString;
 
 namespace IntegrationSys.Equipment
 {
@@ -69,7 +70,7 @@ namespace IntegrationSys.Equipment
             }
         }
 
-        private void EventHandler(object send, CommonPortCmd.ActiveReporting e)
+        private void EventHandler(object send, RecvByteToString.ActiveReporting e)
         {
             if (ReportEvent != null)
             {

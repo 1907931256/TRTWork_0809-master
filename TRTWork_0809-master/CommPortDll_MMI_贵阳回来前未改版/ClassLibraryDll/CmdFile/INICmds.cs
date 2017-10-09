@@ -34,7 +34,7 @@ namespace CmdFile
 
         private List<EqumentCmds> ReadINI(string file)
         {
-            string[] cmds=CmdFile.INIOperationClass.INIGetAllItems(file, "cmd");
+            string[] cmds=INIHelp.INIOperationClass.INIGetAllItems(file, "cmd");
 
 
             for (int i = 0; i < cmds.Length; i++)

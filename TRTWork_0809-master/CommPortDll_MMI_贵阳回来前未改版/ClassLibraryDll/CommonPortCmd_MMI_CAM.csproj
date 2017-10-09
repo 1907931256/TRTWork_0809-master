@@ -72,10 +72,10 @@
     <Compile Include="CmdFile\IGetCommandLine.cs" />
     <Compile Include="CmdFile\INICmds.cs" />
     <Compile Include="CmdFile\INIOperationClass .cs" />
-    <Compile Include="Communication\SerialPortWrapper.cs" />
-    <Compile Include="RecvByteToString\ActiveReporting.cs" />
-    <Compile Include="CommonClass.cs" />
-    <Compile Include="SpecialCmd\DelayCmd.cs" />
+    <Compile Include="CommonClass\SerialPortWrapper.cs" />
+    <Compile Include="HexToString\ActiveReporting.cs" />
+    <Compile Include="CommonClass\CommonClass.cs" />
+    <Compile Include="Hex\DelayCmd.cs" />
     <Compile Include="Log\Log.cs" />
     <Compile Include="Net\ISendCmd.cs" />
     <Compile Include="Net\JSonCmd.cs" />
@@ -83,10 +83,10 @@
     <Compile Include="Relationship\CmdName.cs" />
     <Compile Include="Relationship\CmdPackageXml.cs" />
     <Compile Include="Relationship\MMI_Relationship.cs" />
-    <Compile Include="RecvByteToString\StrHexToStrPram.cs" />
+    <Compile Include="HexToString\StrHexToStrPram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CurrencyClass\ShujuChuli.cs" />
-    <Compile Include="XmlConfig\XMLConfig.cs" />
+    <Compile Include="CommonClass\ShujuChuli.cs" />
+    <Compile Include="ConfigXml\XMLConfig.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

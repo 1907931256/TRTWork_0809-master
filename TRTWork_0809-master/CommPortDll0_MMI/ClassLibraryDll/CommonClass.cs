@@ -1,22 +1,25 @@
 ﻿#define Test//测试用，调试问题
+
+
 using CmdFile;
 using CommonPortCmd.Net;
-using ComPort;
 using System;
 using System.IO;
 using System.IO.Ports;
 using System.Text;
 using System.Threading;
+using Communication;
+using MyLog4Net;
+using XmlConfig;
+using SpecialCmd;
+using CurrencyClass;
+using RecvByteToString;
 
 namespace CommonPortCmd
 {
     public class Common
     {
 
-        /// <summary>
-        /// 握手返回数据包含
-        /// </summary>
-        public string str_Port_Rec = "0F 00";
 
         public static string Model;//设备种类型号制定
 
@@ -145,7 +148,7 @@ namespace CommonPortCmd
                 {
                     try
                     {
-                        serialWrapper.Open(port);
+                        serialWrapper.Open(/*port*/"COM4");
                         byte[] sbuf = ShujuChuli.HexStringToBytes(str_woshou);
                         byte[] resp;
                         serialWrapper.SendRecv(sbuf, out resp);
@@ -316,7 +319,7 @@ namespace CommonPortCmd
                 if (DelayCmd.WhetherCmd(strCmd))//命令是一条延迟命令
                 {
                     Log.Debug("Cmd is delay cmd -->" + strCmd + param);
-                    delyEvent.WaitOne();//每次只能发送一条电机运动指令
+                    delyEvent.WaitOne();//每次只能发送一条电机运动指令  //初始化时true
                     
                     string rec_txt;
 
@@ -329,8 +332,8 @@ namespace CommonPortCmd
                         Log.Debug("1站取放 rec_txt = "+ rec_txt);
                         if (rec_txt.IndexOf("OK")!=-1)
                         {
-                            event_1.Reset();
-                            event_1.WaitOne();//等待延迟数据返回
+                            //event_1.Reset();//时间设置等待状态
+                            //event_1.WaitOne();//等待延迟数据返回
 
 
                             //recStr = "status=OK";
@@ -348,7 +351,7 @@ namespace CommonPortCmd
                     else
                     {
                         event_1.Reset();
-                        event_1.WaitOne();//等待延迟数据返回
+                        event_1.WaitOne();//等待延迟数据返回 
 
                         SendCommand("6站报警清除", out rec_txt);
 

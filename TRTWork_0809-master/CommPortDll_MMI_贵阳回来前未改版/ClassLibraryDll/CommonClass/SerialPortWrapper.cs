@@ -60,17 +60,11 @@ namespace ComPort
         /// </summary>
         private AutoResetEvent recvEvent_;
 
-        /// <summary>
-        /// 读取缓存区的数据
-        /// </summary>
         private byte[] readBuffer_;
-
-
         private byte[] recvBuffer_;
 
         /// <summary>
         /// 创建其支持存储区为内存的流
-        /// 保存从串口读取的数据
         /// </summary>
         private MemoryStream byteBuffer_;
 
@@ -157,11 +151,11 @@ namespace ComPort
             sendEvent_.WaitOne();
             Log.Debug("SerialPortWrapper send data = " + ByteArrayToHexString(req));
             serialPort_.Write(req, 0, req.Length);
-            sendId_ = BitConverter.ToInt16(req, 3);//1标示长度，3标示模块，数据命令的唯一标示
+            sendId_ = BitConverter.ToInt16(req, 3);
             //数据发送间隔时间
             int timeSet = 10;
 
-            if (!recvEvent_.WaitOne(1000))//设置超时时间
+            if (!recvEvent_.WaitOne(1000))
             {
                 Log.Debug("SerialPort recv timeout");
 
@@ -195,8 +189,9 @@ namespace ComPort
         {
             while (keepReadinf_)
             {
-                
-                int readBytes = serialPort_.BytesToRead;//缓冲区的字节数
+               
+
+                int readBytes = serialPort_.BytesToRead;
 
                 if (readBytes > BUFFER_SIZE)
                 {
@@ -211,7 +206,7 @@ namespace ComPort
                 //Log.Debug("DataReceivedHandler start");
                 //Log.Debug("readBytes=" + readBytes);
 
-                serialPort_.Read(readBuffer_, 0, readBytes);//读取串口里面全部内容
+                serialPort_.Read(readBuffer_, 0, readBytes);
 
                 Log.Debug("DataReceivedHandler data = " + ByteArrayToHexString(readBuffer_, 0, readBytes));
 
@@ -264,7 +259,7 @@ namespace ComPort
                 while (remaining > 0)
                 {
 
-                    int index = FindHead(readBuffer_, offset, remaining);//保存接受头位置
+                    int index = FindHead(readBuffer_, offset, remaining);
 
                     if (index == -1) break;
 
@@ -275,7 +270,6 @@ namespace ComPort
                     }
                     else
                     {
-
                         int size = readBuffer_[index + 1];
                         byteBuffer_.Write(readBuffer_, index, 2);
                         remaining -= index - offset + 2;
@@ -325,32 +319,8 @@ namespace ComPort
 
             Log.Debug("SerialPortWrapper HandlerData data = " + ByteArrayToHexString(data, offset, count));
 
-            short sendId = 0;
-            try
-            {
-                sendId = BitConverter.ToInt16(data, offset + 3);
-            }
-            catch (Exception)
-            {
-
-                sendId = 0;
-            }
-
-
-
-            byte mod = 0;
-            try
-            {
-                mod=data[offset + 3];
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-
-                sendId = 0;
-            }
-
-
-                
+            byte mod = data[offset + 3];
+            short sendId = BitConverter.ToInt16(data, offset + 3);
             if (mod == 0xFF)
             {
                 errorFlag_ = true;
@@ -386,10 +356,6 @@ namespace ComPort
 
         }
 
-        /// <summary>
-        /// 处理一条完整的命令
-        /// </summary>
-        /// <param name="data"></param>
         private void HandlerData(byte[] data)
         {
             HandlerData(data, 0, data.Length);
@@ -422,11 +388,6 @@ namespace ComPort
             return hex;
         }
 
-
-        /// <summary>
-        /// 将byte数组以16进制形式输出
-        /// </summary>
-        /// <returns></returns>
         private string ByteArrayToHexString(byte[] data)
         {
             return ByteArrayToHexString(data, 0, data.Length);

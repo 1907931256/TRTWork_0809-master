@@ -141,7 +141,7 @@ namespace IntegrationSys
                 string resp;
 
                 ThreadPool.QueueUserWorkItem(delegate {
-                    LiteDataClient.Instance.BroadcastPickPlace();
+                    //LiteDataClient.Instance.BroadcastPickPlace();
 
                     Log.Debug("PickPlace " + "1站取放 " + bin);
                     if (EquipmentCmd.Instance.SendCommand("1站取放", param, out resp))
